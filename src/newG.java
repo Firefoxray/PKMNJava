@@ -24,4 +24,9 @@ public class newG
             battle.pikachu();
             
         }
+
+        public static void main(String [ ] args)
+        {
+            newG.newGame();
+        }
 }
