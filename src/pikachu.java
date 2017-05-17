@@ -73,6 +73,8 @@ public class pikachu
                             //enter = enterKey.nextLine();
                         } else if (finalCommand.equalsIgnoreCase("Bag")) {
                             draw.pikapic();
+                            print.health();
+                            print.drawHealth();
                             System.out.println(" ");
                             System.out.println("Command Not Availiable Now");
                             System.out.println(" ");
