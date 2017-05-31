@@ -38,4 +38,8 @@ public class pikachuPicture
         System.out.println("░░░█░░░░░░░░█░░░");
         System.out.println("░░░░████████░░░░");
     }
+    public void pikapic2()
+    {
+        System.out.println("Test Image Knee grow");
+    }
 }
