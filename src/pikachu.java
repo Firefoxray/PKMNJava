@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 /**
  * Write a description of class pikachu here.
  * 
@@ -13,6 +14,9 @@ public class pikachu
     static int health = 20;
     static String displayHealth;
     static int exp;
+    static int end;
+    static int turns;
+    static int level;
     public void pikachu()
     {
             Scanner command = new Scanner(System.in);
@@ -21,9 +25,18 @@ public class pikachu
             Scanner enterKey = new Scanner(System.in);
             String enter;
             //
+
+            //
+            Random rand = new Random();
+            int level = rand.nextInt(10) + 1;
+            pikachu.level = level;
+            //
+
             name = newG.name;
-            health = pikachu.health;
-            health = 20;
+            health = level + 10;
+            pikachu.health = health;
+            end = 0;
+
             //
             int a = 1;
             //
@@ -47,7 +60,8 @@ public class pikachu
             
             
             //finalCommand = command.next();
-            for (health = health; health != 0;) {  
+            for (health = health; health != 0;) {
+                turns = turns + 1;
                 a = 1;
                 while(a == 1) {
                 
@@ -67,6 +81,7 @@ public class pikachu
                     {
                         
                         if (finalCommand.equalsIgnoreCase("Run")){
+                            pikachu.end = 1;
                             health = 0;
                             System.out.println(" ");
                             System.out.println(name + " Got Away Safely!!!");
@@ -132,14 +147,39 @@ public class pikachu
                         }
                     }
             }
-            System.out.println("Pikachu Has Fainted");
-            enter = enterKey.nextLine();
-            calculateEXP calculate = new calculateEXP();
-            calculate.exp();
-            exp = calculateEXP.exp;
-            System.out.println("You Have Recived " + exp + " EXP");
+            if (end == 1)
+            {
+                end = 0;
+
+            } else {
+                System.out.println("Pikachu Has Fainted");
+                enter = enterKey.nextLine();
+                pikachuEXP();
+                calculateEXP calculate = new calculateEXP();
+                calculate.exp();
+                exp = calculateEXP.exp;
+                System.out.println("You Have Recived " + exp + " EXP");
+            }
+
             enter = enterKey.nextLine();
             System.out.println(" ");
             System.out.println("Reached End");
     }
+
+    public void pikachuEXP()
+    {
+        int healthXP = pikachu.health + 1;
+        int turnsXP = pikachu.turns;
+        int levelXP = pikachu.level;
+
+        pikachu.healthXP = healthXP;
+        pikachu.turnsXP = turnsXP;
+        pikachu.levelXP = levelXP;
+
+    }
+
+    static int healthXP;
+    static int turnsXP;
+    static int levelXP;
+
 }

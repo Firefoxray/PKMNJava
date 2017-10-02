@@ -3,14 +3,19 @@ public class pkmnHealth
 {
     int health;
     static int getHealth;
+    static int level;
     public int health()
     {
         pkmnHealth getpkmnHealth = new pkmnHealth();
-        pkmnHealth.getHealth = pikachu.health;      
+        pkmnHealth.getHealth = pikachu.health;
+        pkmnHealth.level = pikachu.level;
         return health;
+
     }
     public void drawHealth()
     {
+        System.out.println("Level: " + level);
+
         System.out.print("HP: ");
         for (int i = getHealth; i != 0;  i--)
         {

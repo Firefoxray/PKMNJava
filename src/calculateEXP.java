@@ -8,8 +8,24 @@
 public class calculateEXP
 {
     static int exp;
+    static int level = pikachu.level;
+    static int health = pikachu.health;
+    static int turns = pikachu.turns;
+
     public void exp()
     {
-        calculateEXP.exp = pikachu.health;
+        calc();
+        calculateEXP.exp = (level * health) / turns;
+    }
+
+    public void calc()
+    {
+        pikachu calcEXP = new pikachu();
+        calcEXP.pikachuEXP();
+
+        calculateEXP.level = pikachu.level;
+        calculateEXP.health = pikachu.health;
+        calculateEXP.turns = pikachu.turns;
+
     }
 }
