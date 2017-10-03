@@ -169,6 +169,10 @@ public class pikachu
             }
 
             enter = enterKey.nextLine();
+
+            player calc = new player();
+            calc.player();
+
             System.out.println(" ");
             System.out.println("Reached End");
     }
