@@ -31,12 +31,26 @@ public class newG
 
             System.out.println(" ");
             System.out.println("Good first battle! Oh wait");
-            System.out.println("Their's anothjer one, ATTACK!!!");
+            System.out.println("Their's another one, ATTACK!!!");
             System.out.println(" ");
             enter = enterKey.nextLine();
 
             bulby battle2 = new bulby();
             battle2.bulby();
+
+            if (player.playerLevel == 1)
+            {
+                System.out.println(" ");
+                System.out.println("You got the hang of this.");
+                System.out.println("Keep battling until you get to level 2");
+                System.out.println(" ");
+
+                battle1.pikachu();
+                battle2.bulby();
+
+            }
+
+            System.out.println("Great. Come back later when the game is finished.");
 
         }
 

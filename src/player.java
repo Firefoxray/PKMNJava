@@ -30,7 +30,7 @@ public class player
 
     public void expGain()
     {
-        exp = calcConvert.getpkmnEXP;
+        exp = exp + calcConvert.getpkmnEXP;
         playerExp = playerExp + exp;
     }
 
