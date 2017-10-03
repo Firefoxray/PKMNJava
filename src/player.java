@@ -23,7 +23,10 @@ public class player
         {
             playerLevel = playerLevel + 1;
             playerExp = 0;
+            System.out.println("Your level has increased!");
+            System.out.println("You are now level: " + playerLevel);
         }
+
     }
 
 

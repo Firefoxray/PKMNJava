@@ -13,10 +13,12 @@ public class calcConvert
         pkmnHealth.getHealth = getpkmnHealth;
         pkmnHealth.getLevel = getpkmnLevel;
         call.health();
+
         if (pikachu.during == 0)
         {
             call.drawHealth();
         }
+
     }
     public void healthUpdate()
     {
