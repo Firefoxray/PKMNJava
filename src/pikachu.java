@@ -17,6 +17,9 @@ public class pikachu
     static int end;
     static int turns;
     static int level;
+    static int healthXP;
+    static int turnsXP;
+    static int levelXP;
     public void pikachu()
     {
             Scanner command = new Scanner(System.in);
@@ -155,10 +158,14 @@ public class pikachu
                 System.out.println("Pikachu Has Fainted");
                 enter = enterKey.nextLine();
                 pikachuEXP();
-                calculateEXP calculate = new calculateEXP();
-                calculate.exp();
-                exp = calculateEXP.exp;
-                System.out.println("You Have Recived " + exp + " EXP");
+                /*
+                Debugger
+                System.out.println("Debugger");
+                System.out.println("Health" + healthXP);
+                System.out.println("Turns" + turnsXP);
+                System.out.println("Level" + levelXP);
+                */
+                System.out.println("You Have Received " + exp + " EXP");
             }
 
             enter = enterKey.nextLine();
@@ -168,18 +175,21 @@ public class pikachu
 
     public void pikachuEXP()
     {
-        int healthXP = pikachu.health + 1;
-        int turnsXP = pikachu.turns;
-        int levelXP = pikachu.level;
+        int healthXP = health + 1;
+        int turnsXP = turns;
+        int levelXP = level;
 
         pikachu.healthXP = healthXP;
         pikachu.turnsXP = turnsXP;
         pikachu.levelXP = levelXP;
 
+        calculateEXP calculate = new calculateEXP();
+        calculate.exp();
+
+        exp = calculateEXP.exp;
+        pikachu.exp = exp;
     }
 
-    static int healthXP;
-    static int turnsXP;
-    static int levelXP;
+
 
 }
