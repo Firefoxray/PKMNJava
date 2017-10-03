@@ -24,7 +24,7 @@ public class player
     }
     public void expGain()
     {
-        exp = pikachu.exp;
+        exp = calcConvert.getpkmnEXP;
         playerExp = playerExp + exp;
 
         if (playerExp == 20);

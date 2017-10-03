@@ -19,6 +19,7 @@ public class pikachu
     static int healthXP;
     static int turnsXP;
     static int levelXP;
+    static int during;
 
     @SuppressWarnings("Duplicates")
     public void pikachuEXP()
@@ -30,6 +31,10 @@ public class pikachu
         pikachu.healthXP = healthXP;
         pikachu.turnsXP = turnsXP;
         pikachu.levelXP = levelXP;
+
+        calculateEXP.level = pikachu.levelXP;
+        calculateEXP.health = pikachu.healthXP;
+        calculateEXP.turns = pikachu.turnsXP;
 
         calculateEXP calculate = new calculateEXP();
         calculate.exp();
@@ -50,7 +55,7 @@ public class pikachu
 
         //Method Calls
         picture draw = new picture();
-        pkmnHealth print = new pkmnHealth();
+        calcConvert conv = new calcConvert();
         //
 
         //Random
@@ -61,18 +66,17 @@ public class pikachu
 
         //
         name = newG.name;
-        health = level + 10;
+        int health = level + 10;
         pikachu.health = health;
-        end = 0;
+        int end = 0;
         int a = 1;
         //
 
         //Start
-        pkmnHealth.getHealth = pikachu.health;
-        pkmnHealth.getLevel = pikachu.level;
+        calcConvert.getpkmnHealth = pikachu.health;
+        calcConvert.getpkmnLevel = pikachu.level;
         draw.pikapic();
-        print.health();
-        print.drawHealth();
+        conv.convert();
 
         System.out.println("A Wild Pikachu Appeared!!!!"); enter = enterKey.nextLine();
 
@@ -98,18 +102,12 @@ public class pikachu
                             //enter = enterKey.nextLine();
                         } else if (finalCommand.equalsIgnoreCase("Bag")) {
                             draw.pikapic();
-                            print.health();
-                            print.drawHealth();
+                            conv.convert();
                             System.out.println(" ");
                             System.out.println("Command Not Availiable Now");
                             System.out.println(" ");
                         } else if (finalCommand.equalsIgnoreCase("Attack")) {
-                            System.out.println(" ");
-                            System.out.println("░░░░░░░");
-                            System.out.println("░ Punch  ░");
-                            System.out.println("░ Kick   ░");
-                            System.out.println("░░░░░░░");
-                            System.out.println(" ");
+                            draw.attack();
                             finalCommand = command.next();
                                 if (finalCommand.equalsIgnoreCase("Punch")){
                                     health = health - 5;
@@ -118,13 +116,15 @@ public class pikachu
                                         health = 0;
                                     }
                                     pikachu.health = health;
-                                    pkmnHealth.getHealth = pikachu.health;
-                                    print.health();
+                                    calcConvert.getpkmnHealth = pikachu.health;
+                                    conv.healthUpdate();
                                     draw.pikapic();
                                     if (health !=0)
                                     {
                                         System.out.println("You have damaged for 5 health");
-                                        print.drawHealth();
+                                        //calcConvert.getDuring = 1;
+                                        conv.convert();
+                                        //calcConvert.getDuring = 0;
                                     }
                                 } else {
                                     System.out.println("What?");
@@ -137,13 +137,15 @@ public class pikachu
                                         health = 0;
                                     }
                                     pikachu.health = health;
-                                    pkmnHealth.getHealth = pikachu.health;
-                                    print.health();
+                                    calcConvert.getpkmnHealth = pikachu.health;
+                                    conv.healthUpdate();
                                     draw.pikapic();
                                     if (health !=0)
                                     {
                                         System.out.println("You have damaged for 7 health");
-                                        print.drawHealth();
+                                        //calcConvert.getDuring = 1;
+                                        conv.convert();
+                                        //calcConvert.getDuring = 0;
                                     }
                                 } else {
                                     System.out.println("What?");
@@ -157,7 +159,7 @@ public class pikachu
                         }
                     }
             }
-            if (end == 1)
+            if (pikachu.end == 1)
             {
                 end = 0;
 

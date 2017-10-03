@@ -26,6 +26,10 @@ public class bulby
         bulby.turnsXP = turnsXP;
         bulby.levelXP = levelXP;
 
+        calculateEXP.level = bulby.levelXP;
+        calculateEXP.health = bulby.healthXP;
+        calculateEXP.turns = bulby.turnsXP;
+
         calculateEXP calculate = new calculateEXP();
         calculate.exp();
 
@@ -45,8 +49,9 @@ public class bulby
 
         //Method Calls
         picture draw = new picture();
-        pkmnHealth print = new pkmnHealth();
+        calcConvert conv = new calcConvert();
         player calc = new player();
+        pkmnHealth test = new pkmnHealth();
         //
 
         //Random
@@ -64,11 +69,10 @@ public class bulby
         //
 
         //Start
-        pkmnHealth.getHealth = bulby.health;
-        pkmnHealth.getLevel = bulby.level;
+        calcConvert.getpkmnHealth = bulby.health;
+        calcConvert.getpkmnLevel = bulby.level;
         draw.bulby();
-        print.health();
-        print.drawHealth();
+        conv.convert();
 
         System.out.println("A Wild Bulby Appeared!!!!"); enter = enterKey.nextLine();
 
@@ -95,14 +99,14 @@ public class bulby
 
                     } else if (finalCommand.equalsIgnoreCase("Bag"))
                     {
-                        draw.bulby(); print.health(); print.drawHealth();
+                        draw.bulby(); conv.convert();
                         System.out.println(" ");
                         System.out.println("Command Not Availiable Now");
                         System.out.println(" ");
 
                     } else if (finalCommand.equalsIgnoreCase(("Attack")))
                     {
-                        draw.bulby(); print.health(); print.drawHealth();
+                        draw.bulby(); conv.convert();
                         draw.attack();
                         finalCommand = command.next();
 
@@ -115,13 +119,16 @@ public class bulby
                                     health = 0;
                                 }
                                 bulby.health = health;
-                                pkmnHealth.getHealth = bulby.health;
-                                print.health(); draw.bulby();
+                                calcConvert.getpkmnHealth = bulby.health;
+                                conv.healthUpdate(); draw.bulby();
+
 
                                 if (health !=0)
                                 {
                                     System.out.println("You have damaged for 5 health");
-                                    print.drawHealth();
+                                    //calcConvert.getDuring = 1;
+                                    conv.convert();
+                                    //calcConvert.getDuring = 0;
                                 }
                             } else {
                                 System.out.println("What?");
@@ -138,13 +145,15 @@ public class bulby
                                 }
 
                                 bulby.health = health;
-                                pkmnHealth.getHealth = bulby.health;
-                                print.health();draw.bulby();
+                                calcConvert.getpkmnHealth = bulby.health;
+                                conv.healthUpdate(); draw.bulby();
 
                                 if (health !=0)
                                 {
                                     System.out.println("You have damaged for 7 health");
-                                    print.drawHealth();
+                                    //calcConvert.getDuring = 1;
+                                    conv.convert();
+                                    //calcConvert.getDuring = 0;
                                 }
 
                             } else {
