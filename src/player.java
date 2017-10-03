@@ -7,16 +7,32 @@
  */
 public class player
 {
-    String name;
-    int playerHealth;
-    int playerExp;
+    String name = newG.name;
+    static int playerHealth;
+    static int playerExp;
+    static int playerLevel = 1;
+    //
+    static int exp;
     
-    public void charPlayer()
+    public void player()
     {
-        name = newG.name;
+        //After Battle
+        expGain();
+        System.out.println(name + " EXP = " + playerExp);
+        if (playerExp == 20);
+        {
+            playerLevel = playerLevel + 1;
+            playerExp = 0;
+        }
     }
-    public void expgain()
+
+
+
+    public void expGain()
     {
-        //
+        exp = exp + calcConvert.getpkmnEXP;
+        playerExp = playerExp + exp;
     }
+
+
 }

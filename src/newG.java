@@ -19,10 +19,39 @@ public class newG
             playerName = scanName.next();
             newG name = new newG();
             newG.name = playerName;
-            
-            pikachu battle = new pikachu();
-            battle.pikachu();
-            
+
+            System.out.println("Welcome to the world of trash.");
+            System.out.println("You're bad at life. You only know");
+            System.out.println("how to punch and kick. Look it's");
+            System.out.println("a Pokemon, go violently attack it.");
+            enter = enterKey.nextLine();
+
+            pikachu battle1 = new pikachu();
+            battle1.pikachu();
+
+            System.out.println(" ");
+            System.out.println("Good first battle! Oh wait");
+            System.out.println("Their's another one, ATTACK!!!");
+            System.out.println(" ");
+            enter = enterKey.nextLine();
+
+            bulby battle2 = new bulby();
+            battle2.bulby();
+
+            if (player.playerLevel == 1)
+            {
+                System.out.println(" ");
+                System.out.println("You got the hang of this.");
+                System.out.println("Keep battling until you get to level 2");
+                System.out.println(" ");
+
+                battle1.pikachu();
+                battle2.bulby();
+
+            }
+
+            System.out.println("Great. Come back later when the game is finished.");
+
         }
 
         public static void main(String [ ] args)
