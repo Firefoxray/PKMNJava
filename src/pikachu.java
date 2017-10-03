@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Random;
 /**
  * Write a description of class pikachu here.
@@ -11,7 +10,7 @@ import java.util.Random;
 public class pikachu
 {
     static String name;
-    static int health = 20;
+    static int health;
     static String displayHealth;
     static int exp;
     static int end;
@@ -20,64 +19,72 @@ public class pikachu
     static int healthXP;
     static int turnsXP;
     static int levelXP;
+
+    @SuppressWarnings("Duplicates")
+    public void pikachuEXP()
+    {
+        int healthXP = health + 1;
+        int turnsXP = turns;
+        int levelXP = level;
+
+        pikachu.healthXP = healthXP;
+        pikachu.turnsXP = turnsXP;
+        pikachu.levelXP = levelXP;
+
+        calculateEXP calculate = new calculateEXP();
+        calculate.exp();
+
+        exp = calculateEXP.exp;
+        pikachu.exp = exp;
+    }
+
     public void pikachu()
     {
-            Scanner command = new Scanner(System.in);
-            String finalCommand;
+        //Preliminary Commands
+        Scanner command = new Scanner(System.in);
+        String finalCommand;
             
-            Scanner enterKey = new Scanner(System.in);
-            String enter;
-            //
+        Scanner enterKey = new Scanner(System.in);
+        String enter;
+        //
 
-            //
-            Random rand = new Random();
-            int level = rand.nextInt(10) + 1;
-            pikachu.level = level;
-            //
+        //Method Calls
+        picture draw = new picture();
+        pkmnHealth print = new pkmnHealth();
+        //
 
-            name = newG.name;
-            health = level + 10;
-            pikachu.health = health;
-            end = 0;
+        //Random
+        Random rand = new Random();
+        int level = rand.nextInt(10) + 1;
+        pikachu.level = level;
+        //
 
-            //
-            int a = 1;
-            //
-            pikachuPicture draw = new pikachuPicture();
-            draw.pikapic();
-            pkmnHealth print = new pkmnHealth();
-            print.health();
-            print.drawHealth();
-            //System.out.println("HP: ░░░░░░░░░░░░░░░░░░░░ 20HP ");
-            //System.out.println(" ");
-            System.out.println("A Wild Pikachu Appeared!!!!");
-            enter = enterKey.nextLine();
-            //System.out.println(" ");
-            //System.out.println("What will you do?");
-            //System.out.println(" ");
-            //System.out.println("░░░░░░░");
-            //System.out.println("░ Attack ░");
-            //System.out.println("░ Bag    ░");
-            //System.out.println("░ Run    ░");
-            //System.out.println("░░░░░░░");
-            
-            
-            //finalCommand = command.next();
-            for (health = health; health != 0;) {
+        //
+        name = newG.name;
+        health = level + 10;
+        pikachu.health = health;
+        end = 0;
+        int a = 1;
+        //
+
+        //Start
+        pkmnHealth.getHealth = pikachu.health;
+        pkmnHealth.getLevel = pikachu.level;
+        draw.pikapic();
+        print.health();
+        print.drawHealth();
+
+        System.out.println("A Wild Pikachu Appeared!!!!"); enter = enterKey.nextLine();
+
+            for (health = health; health != 0;)
+            {
                 turns = turns + 1;
                 a = 1;
                 while(a == 1) {
                 
-                    if (a == 1) {
-                        //System.out.println("HP: ░░░░░░░░░░░░░░░░░░░░ 20HP ");
-                        //draw.pikapic();
-                        System.out.println("What will you do?");
-                        System.out.println(" ");
-                        System.out.println("░░░░░░░");
-                        System.out.println("░ Attack ░");
-                        System.out.println("░ Bag    ░");
-                        System.out.println("░ Run    ░");
-                        System.out.println("░░░░░░░");
+                    if (a == 1)
+                    {
+                        draw.que();
                     }
                     finalCommand = command.next();
                     for (a = 1; a == 1; a++)
@@ -165,6 +172,7 @@ public class pikachu
                 System.out.println("Turns" + turnsXP);
                 System.out.println("Level" + levelXP);
                 */
+
                 System.out.println("You Have Received " + exp + " EXP");
             }
 
@@ -176,24 +184,4 @@ public class pikachu
             System.out.println(" ");
             System.out.println("Reached End");
     }
-
-    public void pikachuEXP()
-    {
-        int healthXP = health + 1;
-        int turnsXP = turns;
-        int levelXP = level;
-
-        pikachu.healthXP = healthXP;
-        pikachu.turnsXP = turnsXP;
-        pikachu.levelXP = levelXP;
-
-        calculateEXP calculate = new calculateEXP();
-        calculate.exp();
-
-        exp = calculateEXP.exp;
-        pikachu.exp = exp;
-    }
-
-
-
 }

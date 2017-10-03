@@ -28,8 +28,8 @@ public class newG
             pikachu battle1 = new pikachu();
             battle1.pikachu();
 
-            //bulby battle2 = new bulby();
-            //battle2.bulby();
+            bulby battle2 = new bulby();
+            battle2.bulby();
 
         }
 
