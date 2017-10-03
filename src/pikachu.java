@@ -41,6 +41,7 @@ public class pikachu
 
         exp = calculateEXP.exp;
         pikachu.exp = exp;
+        calcConvert.getpkmnEXP = pikachu.exp;
     }
 
     public void pikachu()
@@ -183,7 +184,7 @@ public class pikachu
             player calc = new player();
             calc.player();
 
-            System.out.println(" ");
-            System.out.println("Reached End");
+            //System.out.println(" ");
+            //System.out.println("Reached End");
     }
 }

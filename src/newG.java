@@ -23,10 +23,17 @@ public class newG
             System.out.println("Welcome to the world of trash.");
             System.out.println("You're bad at life. You only know");
             System.out.println("how to punch and kick. Look it's");
-            System.out.println("a Pokemon, go violently attack it."); enter = enterKey.nextLine();
+            System.out.println("a Pokemon, go violently attack it.");
+            enter = enterKey.nextLine();
 
             pikachu battle1 = new pikachu();
             battle1.pikachu();
+
+            System.out.println(" ");
+            System.out.println("Good first battle! Oh wait");
+            System.out.println("Their's anothjer one, ATTACK!!!");
+            System.out.println(" ");
+            enter = enterKey.nextLine();
 
             bulby battle2 = new bulby();
             battle2.bulby();

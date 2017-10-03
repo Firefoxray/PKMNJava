@@ -35,6 +35,7 @@ public class bulby
 
         exp = calculateEXP.exp;
         bulby.exp = exp;
+        calcConvert.getpkmnEXP = bulby.exp;
     }
 
     public void bulby()
