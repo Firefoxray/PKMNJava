@@ -18,8 +18,11 @@ public class player
     {
         //After Battle
         expGain();
+        int finalXP = player.playerExp;
+
         System.out.println(name + " EXP = " + playerExp);
-        if (playerExp == 20);
+
+        if (playerExp == 20)
         {
             playerLevel = playerLevel + 1;
             playerExp = 0;
@@ -27,14 +30,17 @@ public class player
             System.out.println("You are now level: " + playerLevel);
         }
 
+
+
     }
 
 
 
     public void expGain()
     {
-        exp = exp + calcConvert.getpkmnEXP;
-        playerExp = playerExp + exp;
+        exp = calcConvert.getpkmnEXP;
+        player.playerExp = player.playerExp + exp;
+
     }
 
 

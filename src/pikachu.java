@@ -184,6 +184,7 @@ public class pikachu
             player calc = new player();
             calc.player();
 
+
             //System.out.println(" ");
             //System.out.println("Reached End");
     }
