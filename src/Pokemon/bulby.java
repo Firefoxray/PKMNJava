@@ -1,3 +1,5 @@
+package Pokemon;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -126,10 +128,10 @@ public class bulby
 
                                 if (health !=0)
                                 {
-                                    System.out.println("You have damaged for 5 health");
-                                    //calcConvert.getDuring = 1;
+                                    System.out.println("You have damaged for 5 Subsystems.health");
+                                    //Commands.calcConvert.getDuring = 1;
                                     conv.convert();
-                                    //calcConvert.getDuring = 0;
+                                    //Commands.calcConvert.getDuring = 0;
                                 }
                             } else {
                                 System.out.println("What?");
@@ -151,10 +153,10 @@ public class bulby
 
                                 if (health !=0)
                                 {
-                                    System.out.println("You have damaged for 7 health");
-                                    //calcConvert.getDuring = 1;
+                                    System.out.println("You have damaged for 7 Subsystems.health");
+                                    //Commands.calcConvert.getDuring = 1;
                                     conv.convert();
-                                    //calcConvert.getDuring = 0;
+                                    //Commands.calcConvert.getDuring = 0;
                                 }
 
                             } else {
@@ -174,9 +176,9 @@ public class bulby
             end = 0;
 
         } else {
-            System.out.println("Bulby Has Fainted"); enter = enterKey.nextLine();
-            bulbyEXP();
-            System.out.println("You Have Received " + exp + " EXP");
+            System.out.println("Bulby uses hyper beam"); enter = enterKey.nextLine();
+            bulbyEXP();//(Bulby has fainted)(You gain )
+            System.out.println("You die and lose " + exp + " EXP");
         }
 
         enter = enterKey.nextLine();

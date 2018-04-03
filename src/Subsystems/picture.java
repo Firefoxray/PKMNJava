@@ -1,6 +1,7 @@
+package Subsystems;
 
 /**
- * Write a description of class picture here.
+ * Write a description of class Subsystems.picture here.
  * 
  * @author (your name) 
  * @version (a version number or a date)

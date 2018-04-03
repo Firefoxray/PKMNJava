@@ -1,3 +1,8 @@
+package Commands;
+
+import Pokemon.pikachu;
+import Subsystems.health;
+
 public class calcConvert
 {
     static int getpkmnHealth;
@@ -5,13 +10,14 @@ public class calcConvert
     static int getpkmnEXP;
     static int getDuring;
 
+
     public void convert()
     {
         //Method Call
-        pkmnHealth call = new pkmnHealth();
+        health call = new health();
 
-        pkmnHealth.getHealth = getpkmnHealth;
-        pkmnHealth.getLevel = getpkmnLevel;
+        call.getHealth = getpkmnHealth;
+        call.getLevel = getpkmnLevel;
         call.health();
 
         if (pikachu.during == 0)
