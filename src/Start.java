@@ -1,3 +1,4 @@
+import Initialization.scanners;
 import Pokemon.bulby;
 import Pokemon.pikachu;
 import Subsystems.player;
@@ -6,12 +7,15 @@ import java.util.Scanner;
 
 public class Start
 {
-        static String name; 
+        //static String name;
         public static void newGame()
         {
-            Scanner scanName = new Scanner(System.in);
-            Scanner command = new Scanner(System.in);
-            Scanner enterKey = new Scanner(System.in);
+            //Class Call Methods
+            Initialization.scanners scanners = new scanners();
+
+            //Initializations
+            scanners.scanners();
+
             //
             String enter; //used to press enter to next line
             String finalCommand; //command that is then processed
@@ -20,7 +24,8 @@ public class Start
             player player = new player();
             //Game Start
             System.out.println("What is your name?");
-            playerName = scanName.next();
+            scanners.next
+            playerName = scanners.
             Start name = new Start();
             Start.name = playerName;
 
