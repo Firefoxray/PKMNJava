@@ -1,0 +1,10 @@
+<application>
+  <component name="GithubAccounts">
+    <account id="ca7df4dc-2da6-472a-b310-2e06c3d98962" name="firefoxray">
+      <server host="github.com" />
+    </account>
+  </component>
+  <component name="GithubSettings">
+    <option name="AUTH_TYPE" value="TOKEN" />
+  </component>
+</application>
