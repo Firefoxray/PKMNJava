@@ -34,6 +34,10 @@
           <option name="url" value="https://github.com/Firefoxray/1251-Ray-Projects.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/first-1251/clawzilla.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\TheBo\IdeaProjects" />
